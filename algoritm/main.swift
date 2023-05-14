@@ -17,25 +17,21 @@ for _ in 0..<N {
 
 let answer = inputs.reduce(0) { partialResult, input in
     
-    let inputCount = input.count
+    var setData  = Set<Character>()
+    setData.insert(input.first!)
     
-    for i in 0..<inputCount - 1 {
+    for i in 0..<input.count - 1 {
         let targetIndex = input.index(input.startIndex, offsetBy: i)
-        let target = input[targetIndex]
-        
         let compareIndex = input.index(targetIndex, offsetBy: 1)
+        
+        let target = input[targetIndex]
         let compare = input[compareIndex]
         
-        if (target == compare) {
-            continue
-        }
-        
-        for j in i+2..<inputCount {
-            let anotherIndex = input.index(input.startIndex, offsetBy: j)
-            let anotherCompare = input[anotherIndex]
-            
-            if (target == anotherCompare) {
+        if (target != compare) {
+            if (setData.contains(compare)) {
                 return partialResult
+            } else {
+                setData.insert(compare)
             }
         }
     }
@@ -43,5 +39,5 @@ let answer = inputs.reduce(0) { partialResult, input in
     return partialResult + 1
 }
 
-print(answer)
 
+print(answer)
