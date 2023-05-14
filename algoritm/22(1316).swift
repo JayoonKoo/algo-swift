@@ -1,12 +1,13 @@
 //
-//  19(11720).swift
+//  22(1316).swift
 //  algoritm
 //
-//  Created by 구자윤 on 2023/05/12.
+//  Created by 구자윤 on 2023/05/14.
 //
 
 import Foundation
 
+/**
 let N = Int(readLine()!)!
 
 var inputs: [String] = []
@@ -45,3 +46,5 @@ let answer = inputs.reduce(0) { partialResult, input in
 
 print(answer)
 
+ 
+ */
